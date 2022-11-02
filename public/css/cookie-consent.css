@@ -1,0 +1,25 @@
+#cookie-consent{
+	padding:0 var(--side-padding);
+	background-color:var(--color-light-1);
+	font-family:var(--font-normal);
+}
+#cookie-consent,#cookie-consent>div{
+	flex-flow:row wrap;
+	justify-content:space-between;
+}
+#cookie-consent>*{padding:10px 0}
+#cookie-consent .button:not(:first-child){margin-left:10px}
+#cookie-consent .button{
+	padding:12px 14px;
+	font-size:0.9em;
+	font-weight:bold;
+	background-color:var(--color-highlight);
+	cursor:pointer;
+	color:var(--color-light-1);
+}
+#cookie-consent .button.gray{background-color:#888}
+#cookie-consent p{
+	flex-basis:75%;
+	vertical-align:center;
+	color:var(--color-dark-1);
+}

@@ -1,0 +1,127 @@
+{{ define "stylesheets" }}
+  {{ partial "css.html" . }}
+  <link rel="stylesheet" href="/css/contact.css">
+{{ end }}
+{{ define "scripts" }}
+  {{ partial "js.html" . }}
+  <script src="/js/contact.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+{{ end }}
+{{ define "main" }}
+  <section class="breaker">
+      <div>
+          <div>
+              <h1>Are you a producer?</h1>
+              <p>We're looking for talent. Submit your music here.</p>
+              <div class="action"><div class="hover-button disabled">COMING SOON</div></div>
+          </div>
+      </div>
+  </section>
+  <section class="tiles">
+      <div id="enquiry">
+          <h1>Enquiries</h1>
+          <div class="form-cont">
+              <form id="enq-form">
+                  <div>
+                      <p>If you would prefer to discuss something over email then please complete this form.</p>
+                      <div id="enq-form-start" class="hover-button disabled">Get started</div>
+                      <p class="noscript error">Enable JavaScript to use this form.</p>
+                  </div>
+                  <div>
+                      <p><label for="enq-form-msg">What are you contacting us about today? Please write your message below.</label></p>
+                      <textarea id="enq-form-msg" name="msg" tabindex="-1"></textarea>
+                  </div>
+                  <div>
+                      <p>Please provide contact details so that we can respond to you.</p>
+                      <label>
+                          <span>Name</span>
+                          <input id="enq-form-name" type="text" name="name" tabindex="-1">
+                      </label>
+                      <label>
+                          <span>Email</span>
+                          <input id="enq-form-email" type="email" name="email" tabindex="-1">
+                      </label>
+                  </div>
+                  <div>
+                      <p>Complete the CAPTCHA.</p>
+                      <div id="enq-form-captcha"></div>
+                  </div>
+                  <div>
+                      <p id="enq-form-debrief"></p>
+                  </div>
+              </form>
+          </div>
+          <div id="enq-form-buttons">
+              <div id="enq-form-prev-btn"></div>
+              <div id="enq-form-next-btn">
+                  <div id="enq-form-tooltip"></div>
+              </div>
+          </div>
+      </div>
+      <div id="chat">
+          <h1>Chat with us.</h1>
+          <div>
+              <a id="facebook-logo" href="https://facebook.com/nrglabuk" title="Find us on Facebook.">
+                {{ partial "facebook-rgb.svg" . }}
+              </a>
+              <a id="messenger-logo" href="https://m.me/nrglabuk" title="Chat with us on Facebook Messenger.">
+                {{ partial "messenger-rgb.svg" . }}
+              </a>
+              <a id="instagram-logo" href="https://instagram.com/nrglabuk" title="Find us on Instagram.">
+                <img src="/icon/instagram-rgb.png" alt="Instagram">
+            </a>
+          </div>
+      </div>
+  </section>
+  <div id="demo-upload" class="hidden">
+      <a id="exit-overlay" href="/contact"></a>
+      <div id="demo-upload-container">
+          <a class="exit" href="/contact"></a>
+          <div class="form">
+              <form method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="a" value="upload">
+                  <input type="hidden" name="MAX_FILE_SIZE" value="52428800">
+                  <div>
+                      <p>
+                          <label for="demo-name">Name</label>
+                          <span class="req"></span>
+                      </p>
+                      <input id="demo-name" type="text" name="name">
+                  </div>
+                  <div>
+                      <p>
+                          <label for="demo-email">Email</label>
+                          <span class="req"></span>
+                      </p>
+                      <input id="demo-email" type="email" name="email">
+                  </div>
+                  <div>
+                      <p>
+                          <label for="demo-alias">Artist name / alias</label>
+                          <span class="req"></span>
+                      </p>
+                      <input id="demo-alias" type="text" name="alias">
+                  </div>
+                  <div>
+                      <p>
+                          <label for="demo-file">Upload a file</label>
+                          <span class="req"></span>
+                      </p>
+                      <input id="demo-file" type="file" name="demo" accept="audio/*">
+                  </div>
+                  <div>
+                      <p><span class="req"></span> indicates a required field.</p>
+                      <input type="submit">
+                  </div>
+              </form>
+          </div>
+          <div class="info">
+              <h1>Submit your music.</h1>
+              <p>Use this form to send us experiments of your own.</p>
+              <p>We recommend uploading either a WAV or a 320kbps MP3 file.</p>
+              <p>Max file size: 50MB.</p>
+          </div>
+      </div>
+  </div>
+  {{ .Content }}
+{{ end }}

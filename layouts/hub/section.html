@@ -1,0 +1,19 @@
+{{ define "stylesheets" }}
+  {{ partial "css.html" . }}
+  <link rel="stylesheet" href="/css/linkhub.css">
+{{ end }}
+{{ define "header" }}
+  {{""}}
+{{ end }}
+{{ define "main" }}
+  <a class="nrglab-logo" href="https://nrglab.uk">
+    <svg><use href="/icon/brands.svg#nrglab"/></svg>
+    <span>nrglab</span>
+  </a>
+  {{ .Content }}
+{{ end }}
+{{ define "footer" }}
+  <footer>
+    <small>© NRGLAB 2022</small>
+  </footer>
+{{ end }}

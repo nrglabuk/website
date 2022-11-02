@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+<head>
+  {{- block "head" . -}}
+    {{- partial "head.html" . -}}
+  {{- end -}}
+  <title>
+    {{ block "title" . }}
+      {{ if not .IsHome }}
+        {{ with .Title }}
+          {{ . | title }} | 
+        {{ end }}
+        {{ .Site.Title }}
+      {{ end }}
+    {{ end }}
+  </title>
+  {{ block "stylesheets" . }}
+    {{ partial "css.html" . }}
+  {{ end }}  
+  {{ block "scripts" . }}
+  {{ partial "js.html" . }}
+  {{ end }}
+</head>
+<body>
+  {{- block "header" . -}}
+    {{- partial "header.html" . -}}
+  {{- end -}}
+  <div>
+    <main aria-role="main">
+      {{- block "main" . -}}
+        {{- .Content -}}
+      {{- end -}}
+    </main>
+    {{ block "footer" . -}}
+      {{- partial "footer.html" . -}}
+    {{- end -}}
+  </div>
+</body>
+</html>

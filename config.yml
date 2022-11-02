@@ -1,0 +1,7 @@
+baseURL: https://nrglab.uk
+disableKinds: ["RSS", "taxonomy", "term"]
+enableRobotsTXT: true
+languageCode: en-gb
+publishDir: dist
+staticDir: public
+title: NRGLAB

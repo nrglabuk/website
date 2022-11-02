@@ -1,0 +1,10 @@
+# Specify a `publish_time` in the future to prevent
+#   an entry from appearing on live site
+
+- name: "InsideInfo & MC KKOI"
+  venue: "Club R&R Plymouth"
+  fb_event_id: 564389158195563
+  cover_img: /img/insideinfo-kkoi-flyer.jpg
+  start_time: 2022-01-22 22:00:00
+  end_time: 2022-01-23 04:00:00
+  publish_time: 2021-11-06 18:00:00

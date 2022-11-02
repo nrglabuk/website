@@ -1,0 +1,48 @@
+{{ with $spotlight := index .Site.Data.events 0 }}
+  <section id="spotlight">
+    <div class="breaker"
+      {{- with $spotlight.cover_img -}}
+        style="background-image:url('{{ . }}')"
+      {{- end -}}
+    >
+      <div>
+        <div>
+          <div class="cat event"></div>
+          <h1>
+            {{- with $spotlight.name -}}
+              {{ $spotlight.name }}
+            {{- else -}}
+              {{ "TBA" }}
+            {{- end -}}
+          </h1>
+          <!-- TODO: glyph icons for venue and date -->
+          {{- with $spotlight.venue -}}
+            <p>{{ . }}</p>
+          {{- end -}}
+          {{- if isset $spotlight "start_text" -}}
+            <p>{{ $spotlight.start_text }}</p>
+          {{- else if isset $spotlight "start_time" -}}
+            {{- $start_time := ($spotlight.start_time | time.AsTime) }}
+            <p>
+              {{- $start_time.Format "Monday, 2" }}
+              {{- if in (slice 1 21 31) $start_time.Day -}}
+                st
+              {{- else if in (slice 2 22) $start_time.Day -}}
+                nd
+              {{- else if in (slice 3 23) $start_time.Day -}}
+                rd
+              {{- else -}}
+                th
+              {{- end }} {{ $start_time.Format "January" -}}
+            </p>
+          {{- end -}}
+          {{- with $spotlight.fb_event_id }}
+            <div class="action">
+              <a class="hover-button" href="https://www.facebook.com/events/{{ . }}">MORE INFO</a>
+            </div>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{- end }}

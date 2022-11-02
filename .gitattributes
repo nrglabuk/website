@@ -1,0 +1,10 @@
+# Normalise line endings
+* text=auto
+
+# Show in language stats
+*.md    linguist-detectable=true
+/data/* linguist-detectable=true
+
+# Don't show in language stats
+CHANGELOG.md linguist-detectable=false
+README.md    linguist-detectable=false

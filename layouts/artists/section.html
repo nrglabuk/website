@@ -1,0 +1,24 @@
+{{- define "stylesheets" -}}
+  {{- partial "css.html" . -}}
+  <link rel="stylesheet" href="/css/search.css">
+{{ end }}
+{{ define "main" }}
+  <div class="search-heading">
+    <h1>{{ .Title }}</h1>
+  </div>
+  <div class="search-tiles">
+    {{ range .Site.Data.artists }}
+      {{ if isset . "name" }}
+        <a href="/artists/{{ urlize .name }}">
+          <div class="art"
+            {{ with .avatar }}
+              style="background-image:url('{{.}}')"
+            {{ end }}
+          >
+            <p>{{ .name }}</p>
+          </div>
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}
