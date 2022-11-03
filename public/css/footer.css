@@ -1,0 +1,45 @@
+@import 'social-links.css';
+
+footer {
+	grid-area: 3;
+  text-align: center;
+  background: var(--color-dark-2);
+}
+
+footer > * {
+  padding: 16px var(--side-padding) 10px;
+}
+
+footer h1 {
+  font-size: 14px;
+  padding: 16px;
+}
+
+footer small, footer h1 {
+  opacity: 70%;
+}
+
+footer a, footer svg {
+  transition-duration: 150ms;
+}
+
+footer, footer a {
+  color: var(--color-light-2);
+}
+
+footer svg {
+  height: 24px;
+  width: 24px;
+	fill: var(--color-light-2);
+}
+
+footer a:hover {
+  color: var(--color-highlight)
+}
+footer a:hover > svg{
+	fill: var(--color-highlight);
+}
+
+footer nav a {
+  margin: 0 10px;
+}

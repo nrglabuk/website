@@ -1,42 +1,19 @@
-@font-face {
-	font-family:'gothambold';
-	src:url('/font/gotham/bold.woff2') format('woff2'),
-	url('/font/gotham/bold.woff') format('woff');
-}
-@font-face {
-	font-family:'gothambook';
-	src:url('/font/gotham/book.woff2') format('woff2'),
-	url('/font/gotham/book.woff') format('woff');
-}
-@font-face {
-	font-family:'gothamlight';
-	src:url('/font/gotham/light.woff2') format('woff2'),
-	url('/font/gotham/light.woff') format('woff');
-}
-@font-face {
-	font-family:'gothamthin';
-	src:url('/font/gotham/thin.woff2') format('woff2'),
-	url('/font/gotham/thin.woff') format('woff');
-}
+:root {
 
-@keyframes breathe{
-	75%{opacity:96%}
-	100%{opacity:62%}
+  --color-dark-1: #111;
+  --color-dark-2: #222;
+  --color-dark-3: #333;
+  --color-header: #111e;
+  --color-light-1: #eee;
+  --color-light-2: #d0d0d0;
+  --color-light-3: #bbb;
+  --color-highlight: #18b;
+  --color-highlight-alpha: #18bb;
+  --color-err: #c45;
+
+  --font-light: "gothamlight", sans-serif;
+  --font-normal: "gothambook", var(--font-light);
+  --font-bold: "gothambold", var(--font-normal);
+
+  --anim-breathe: breathe linear 1.5s infinite alternate;
 }
-:root{
-	--color-dark-1:#111;
-	--color-dark-2:#222;
-	--color-dark-3:#333;
-	--color-header:#111e;
-	--color-light-1:#eee;
-	--color-light-2: #d0d0d0;
-	--color-light-3:#bbb;
-	--color-highlight:#18b;
-	--color-highlight-alpha:#18bb;
-	--color-err:#c45;
-	--font-light:"gothamlight",sans-serif;
-	--font-normal:"gothambook",var(--font-light);
-	--font-bold:"gothambold",var(--font-normal);
-	--anim-breathe:breathe linear 1.5s infinite alternate;
-}
-*{padding:0;margin:0}

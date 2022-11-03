@@ -1,0 +1,15 @@
+.nrglab-logo {
+  display: flex;
+  gap: 10px;
+}
+
+.nrglab-logo svg {
+  height: 40px;
+  width: 40px;
+}
+
+.nrglab-logo span {
+  font-family: var(--font-bold);
+  font-weight: bold;
+  font-size: 24pt;
+}

@@ -1,6 +1,6 @@
 ---
 title: Our Vision
-draft: true
+lastmod: 2022-02-16
 ---
 
 At NRGLAB, we are inspired by life-changing experiences - those events and festivals that take you away from the mundane real world and transport you to somewhere else. Even though it's just for a night or a weekend - or whatever the case may be - we know that those experiences are truly special, and so we've made it our mission to create incredible experiences that you'll remember forever.

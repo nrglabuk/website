@@ -1,158 +1,122 @@
 :root {
-	/* Amount of padding around the article */
-	--about-padding: 20px;
+  --about-padding: 20px;
 }
 
-/*
- * background colour overrides
- * & mobile layout
-*/
 body {
-	grid-template-rows: repeat(2, min-content) auto min-content;
-	grid-template-columns: var(--side-padding) auto var(--side-padding);
-	row-gap: var(--about-padding);
-	background-color: #e5e5e5;
-}
-header {
-	grid-area: 1 / 1 / 2 / -1;
-}
-footer {
-	grid-area: -1 / 1 / -2 / -1;
-	background-color: var(--color-dark-2);
-}
-#about-nav {
-	grid-area: 2 / 2;
-}
-#about-article-container {
-	grid-area: 3 / 2;
-	padding: var(--about-padding);
-	background-color: var(--color-light-1);
-}
-#about-article-container,
-#about-nav nav {
-	box-shadow: #aaa 0 1px 3px;
+  background-color: #e5e5e5;
 }
 
-/* Widescreen layout overrides */
-@media only screen and (min-width: 750px) {
-	body {
-		grid-template-columns: var(--side-padding) min-content var(--about-padding) auto var(--side-padding);
-	}
+article,
+#about-nav-container nav {
+  box-shadow: #aaa 0 1px 3px;
+}
 
-	#about-nav {
-		position: sticky;
-		grid-row-end: span 2;
-		top: calc(var(--height-header) + var(--about-padding) + 1px);
-	}
+/* Widescreen layout */
 
-	#about-article-container {
-		grid-area: 2 / 4;
-		max-width: 700px;
-	}
+@media only screen and (min-width: 750px)
+{
+  main {
+    padding: 0 var(--side-padding);
+    display: grid;
+    min-height: 100%;
+    grid-template-columns: min-content auto;
+    gap: 30px;
+  }
+
+  main > div {
+    margin: var(--about-padding) 0;
+  }
+
+  #about-nav-container {
+    position: sticky;
+    top: calc(50px + var(--about-padding));
+    bottom: var(--about-padding);
+  }
 }
 
 /* NAV */
-#about-nav nav {
-	width: 100%;
-	min-width: 200px;
-	padding: 1px;
-	margin-bottom: var(--about-padding);
-	background-color: #aaa;
-	font-size: 14pt;
-}
-#about-nav h1 {
-	margin: 12px;
-	font-size: 14pt;
-	color: var(--color-dark-1);
-}
-#about-nav a {
-	display: block;
-	margin: 1px;
-	padding:12px 20px;
-	background-color: var(--color-light-1);
-	color: var(--color-dark-2);
-	text-decoration: none;
-}
-#about-nav .active,
-#about-nav a:hover {
-	background-color: #ddd;
-}
-#about-nav .active {
-	position: relative;
-	color: var(--color-dark-1);
-}
-#about-nav .active:after {
-	position: absolute;
-	content: "";
-	top: 0;
-	right: -2px;
-	width: 6px;
-	height: 100%;
-	background-color: var(--color-highlight);
+
+#about-nav-container nav {
+  width: 100%;
+  min-width: 200px;
+  margin-bottom: var(--about-padding);
+  padding: 1px;
+  background-color: #aaa;
+  font-size: 14pt;
 }
 
-/* ARTICLE */
-#about-article-container article {
-	display: none;
-}
-#about-article-container .active {
-	display: initial;
+#about-nav-container h1 {
+  margin: 12px;
+  font-size: 14pt;
+  color: var(--color-dark-1);
 }
 
-/* HORIZONTAL RULE */
-#about-article-container hr {
-	margin: var(--about-padding) 0;
+#about-nav-container a {
+  display: block;
+  margin: 1px;
+  padding:12px 20px;
+  background-color: var(--color-light-1);
+  color: var(--color-dark-2);
+  text-decoration: none;
 }
 
-/* LOGO SIGNATURE */
-#about-article-container .nrglab-logo {
-	display: flex;
-	justify-content: center;
-	color: var(--color-dark-2);
+#about-nav-container .active,
+#about-nav-container a:hover {
+  background-color: #ddd;
+}
+#about-nav-container .active {
+  position: relative;
+  color: var(--color-dark-1);
+}
+#about-nav-container .active:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -2px;
+  width: 6px;
+  height: 100%;
+  background-color: var(--color-highlight);
 }
 
-/* CONTAINER/PARENT - most element styles will inherit from this */
+/* ARTICLE & CONTENT */
+
 article {
-	font-size: 14pt;
-	line-height: 1.5;
-	color: var(--color-dark-2);
+  font-size: 14pt;
+  line-height: 1.4;
+  padding: var(--about-padding);
+  color: var(--color-dark-2);
+  background: var(--color-light-1);
 }
 
-/* SVG fill colour matches text colour */
 article svg {
-	fill: var(--color-dark-2)
+  fill: var(--color-dark-2);
 }
 
-/* Spacing between paragraphs and elements are the same */
-article h1,
-article p,
-article small,
-article li {
-	margin: var(--about-padding) 0;
-}
-
-/* Styles for individual element types */
-
-/* Headings */
 article h1 {
-	font-family: var(--font-bold);
-	font-size: 28pt;
-	color: var(--color-dark-1);
-	text-align: center;
+  font-family: var(--font-bold);
+  font-size: 28pt;
+  margin-bottom: 0.5em;
 }
 
-/* Subtitle */
+article p {
+  margin: 1em 0.5em;
+}
+
 article small {
-	opacity: 70%;
+  opacity: 70%;
+  margin: 1em 0.5em;
 }
 
-/* List container */
 article ul {
-	padding-left: 30px;
+  padding-left: 30px;
 }
 
-/* External link symbol */
-article a[target="_blank"]::after {
-	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-	padding: 0 6px;
+article hr {
+  margin: 1em 0;
+}
+
+article .nrglab-logo {
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }

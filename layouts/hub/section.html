@@ -6,14 +6,14 @@
   {{""}}
 {{ end }}
 {{ define "main" }}
-  <a class="nrglab-logo" href="https://nrglab.uk">
-    <svg><use href="/icon/brands.svg#nrglab"/></svg>
-    <span>nrglab</span>
-  </a>
-  {{ .Content }}
+  <div id="hub-container">
+    <a class="nrglab-logo" href="https://nrglab.uk">
+      <svg><use href="/icon/brands.svg#nrglab"/></svg>
+      <span>nrglab</span>
+    </a>
+    {{ .Content }}
+  </div>
 {{ end }}
 {{ define "footer" }}
-  <footer>
-    <small>© NRGLAB 2022</small>
-  </footer>
+  <small>© NRGLAB 2022</small>
 {{ end }}

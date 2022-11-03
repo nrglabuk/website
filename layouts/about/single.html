@@ -7,25 +7,30 @@
   <!-- script src="/js/about.js" defer></script -->
 {{ end }}
 {{ define "main" }}
-  <div id="about-nav">
-    <!-- TODO: highlight active -->
-    <nav>
-      <h1>INFO</h1>
-      <a href="/about/">About Us</a>
-      <a href="/about/vision/">Our Vision</a>
-    </nav>
-    <nav>
-      <h1>POLICIES</h1>
-      <a href="/about/cookies/">Cookie Policy</a>
-    </nav>
-  </div>
-  <article>
-    {{ with .Title }}<h1>{{.}}</h1>{{ end }}
-    {{ .Content }}
-    <hr>
-    <div class="nrglab-logo">
-      <svg><use href="/icon/brands.svg#nrglab"/></svg>
-      <span>nrglab</span>
+  <div id="about-nav-sticky-area">
+    <div id="about-nav-container">
+      <!-- TODO: highlight active -->
+      <nav>
+        <h1>INFO</h1>
+        <a href="/about/">About Us</a>
+        <a href="/about/vision/">Our Vision</a>
+      </nav>
+      <nav>
+        <h1>POLICIES</h1>
+        <a href="/about/cookies/">Cookie Policy</a>
+      </nav>
     </div>
-  </article>
+  </div>
+  <div id="about-article-container">
+    <article>
+      {{ with .Title }}<h1>{{.}}</h1>{{ end }}
+      {{ with .Lastmod }}<small>Updated: {{ .UTC.Format "Jan 2, 2006" }}</small>{{ end }}
+      {{ .Content }}
+      <hr>
+      <div class="nrglab-logo">
+        <svg><use href="/icon/brands.svg#nrglab"/></svg>
+        <span>nrglab</span>
+      </div>
+    </article>
+  </div>
 {{ end }}

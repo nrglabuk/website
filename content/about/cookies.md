@@ -1,7 +1,6 @@
 ---
 title: Cookie Policy
-updated: 2022-02-20
-draft: true
+lastmod: 2022-02-16
 ---
 
 Some website features rely on cookies or local storage in order to function, as detailed below.

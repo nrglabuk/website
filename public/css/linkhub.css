@@ -1,38 +1,44 @@
-body {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+main {
+  display: flex;
 }
-.nrglab-logo {
-    font-size: 42pt;
-    gap:10px;
+
+header {
+  display: none;
 }
-.nrglab-logo > svg {
-    width: 72px;
-    height: 72px;
-    fill: var(--color-light-1);
+
+footer small {
+  padding: 0;
 }
+
+#hub-container {
+  margin: auto;
+}
+
+.nrglab-logo svg {
+  width: 72px;
+  height: 72px;
+  fill: var(--color-light-1);
+}
+
+.nrglab-logo span {
+  font-size: 44pt;
+}
+
 a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: calc(100vw - 50px);
-    max-width: 500px;
-    margin: 16px;
-    color: var(--color-light-1);
-    text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80px;
+  width: calc(100vw - 50px);
+  max-width: 500px;
+  margin: 16px;
+  color: var(--color-light-1);
+  font-size: 18pt;
+  text-decoration: none;
 }
+
 a:not(.nrglab-logo) {
-    height: 80px;
-    border-radius: 12px;
-    background-color: var(--color-dark-3);
-    font-size: 18pt;
-}
-footer {
-    position: fixed;
-    bottom: 0;
-    text-align: center;
+  border-radius: 12px;
+  background-color: var(--color-dark-3);
 }

@@ -22,18 +22,20 @@
   {{ end }}
 </head>
 <body>
-  {{- block "header" . -}}
-    {{- partial "header.html" . -}}
-  {{- end -}}
-  <div>
-    <main aria-role="main">
-      {{- block "main" . -}}
-        {{- .Content -}}
-      {{- end -}}
-    </main>
+  <header>
+    {{- block "header" . -}}
+      {{- partial "header.html" . -}}
+    {{- end -}}
+  </header>
+  <main aria-role="main">
+    {{- block "main" . -}}
+      {{- .Content -}}
+    {{- end -}}
+  </main>
+  <footer>
     {{ block "footer" . -}}
       {{- partial "footer.html" . -}}
     {{- end -}}
-  </div>
+  </footer>
 </body>
 </html>

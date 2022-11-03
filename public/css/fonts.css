@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'gothambold';
+  src: url('/font/gotham/bold.woff2')  format('woff2'),
+       url('/font/gotham/bold.woff')   format('woff');
+}
+
+@font-face {
+  font-family: 'gothambook';
+  src: url('/font/gotham/book.woff2')  format('woff2'),
+       url('/font/gotham/book.woff')   format('woff');
+}
+
+@font-face {
+  font-family: 'gothamlight';
+  src: url('/font/gotham/light.woff2') format('woff2'),
+       url('/font/gotham/light.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'gothamthin';
+  src: url('/font/gotham/thin.woff2')  format('woff2'),
+       url('/font/gotham/thin.woff')   format('woff');
+}
