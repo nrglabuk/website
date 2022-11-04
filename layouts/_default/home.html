@@ -1,4 +1,28 @@
+{{ define "stylesheets" }}
+  {{ partial "css.html" . }}
+  <link rel="stylesheet" href="/css/home.css">
+{{ end }}
+{{ define "scripts" }}
+  {{ partial "js.html" . }}
+  <script src="/js/home.js" type="module"></script>
+{{ end }}
 {{- define "main" -}}
-  {{- partial "spotlight.html" . -}}
+  {{ $found_event := false }}
+  {{ range .Site.Data.events }}
+    {{ if or (eq .publish_time nil) ((.publish_time | time.AsTime).After now) ((.start_time | time.AsTime).Before now) }}
+      {{ continue }}
+    {{ else }}
+      {{- partial "spotlight.html" . -}}
+      {{ $found_event = true }}
+      {{ break }}
+    {{ end }}
+  {{ end }}
+  {{ if eq $found_event false }}
+    <div id="video-background-container">
+      <video id="video-background" src="/vid/logo-glitch-web.webm" autoplay muted loop></video>
+      <div id="video-overlay"></div>
+    </div>
+    <div id="space-taker"></div>
+  {{ end }}
   {{- .Content -}}
 {{ end }}

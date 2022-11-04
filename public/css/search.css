@@ -138,11 +138,11 @@ table svg {
   width: auto;
 }
 
-.search-event-table td:not(:nth-child(2)) {
+.search-event-table td:not(:first-child) {
   text-align: center;
 }
 
-.search-event-table td:nth-child(2) {
+.search-event-table td:first-child {
   font-weight: bold;
 }
 

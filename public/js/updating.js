@@ -1,3 +1,6 @@
+import './fb.js';
+import './glitch-video.js';
+
 // Change the ellipsis every second
 setInterval(((stage) => () => document.getElementById('txt').innerText = (() => {
 	switch (stage++) {
@@ -12,7 +15,3 @@ setInterval(((stage) => () => document.getElementById('txt').innerText = (() => 
 			return "updating...";
 	}
 })())(0), 1000);
-
-// Prevent video right click & controls
-for (const event of ['oncontextmenu', 'onplay', 'onpause'])
-	document.getElementById('vid')[event] = event => event.preventDefault();

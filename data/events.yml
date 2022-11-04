@@ -1,8 +1,26 @@
-# Specify a `publish_time` in the future to prevent
-#   an entry from appearing on live site
+# This is a list of NRGLAB's events
 
-- name: "InsideInfo & MC KKOI"
-  venue: "Club R&R Plymouth"
+# Each event may have the following fields:
+
+# cover_img    {string} Absolute path to the cover image
+# end_time     {date}   When does the event end?
+# fb_event_id  {int}    The Facebook event ID as shown in the URL
+# name         {string} Name of the event
+# publish_time {date}   When should the event be allowed to appear publicly on the site?
+# start_time   {date}   When does the event begin?
+# start_text   {string} Text that may be used in place of the start time, e.g. "Hallowe'en 2022"
+# venue        {string} Name of the venue
+
+# Generally no field is mandatory.
+# If a field is ommitted, the layout will either omit or substitute the data.
+# For instance, the website's event list shows "TBA" if a venue hasn't been provided.
+
+# The spotlight partial will take the first event from this list that:
+#  - Has a start_time in the future
+#  - Has a publish_time in the past
+
+- name: InsideInfo & MC KKOI
+  venue: Club R&R Plymouth
   fb_event_id: 564389158195563
   cover_img: /img/insideinfo-kkoi-flyer.jpg
   start_time: 2022-01-22 22:00:00

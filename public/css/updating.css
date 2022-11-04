@@ -1,29 +1,7 @@
+@import 'glitch-video.css';
+
 html {
   background: #000;
-}
-
-#vid-c {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -3;
-  overflow: hidden;
-}
-
-#vid {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 #txt, #txt:before {
@@ -34,24 +12,19 @@ html {
   font-family: monospace;
   font-size: 16pt;
 }
+
 #txt:before {
   content: "updating...";
-  z-index: -2;
+  z-index: -1;
   background: #000;
   color: #000;
 }
 
 #txt {
-  z-index: -1;
   color: #0f0;
+  opacity: 90%;
 }
 
-#ol {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #0005;
+#video-overlay {
+  background: radial-gradient(transparent, #000);
 }

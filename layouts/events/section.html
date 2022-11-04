@@ -10,9 +10,10 @@
   <table class="search-event-table">
     <thead>
       <tr>
-        <td>Date</td>
-        <td>Event</td>
-        <td>Location</td>
+        <td>What?</td>
+        <td>When?</td>
+        <td>Where?</td>
+        <td>Links</td>
       </tr>
     </thead>
     <tbody>
@@ -20,15 +21,15 @@
         {{ if or (eq .publish_time nil) ((.publish_time | time.AsTime).Before now) }}
           <tr>
             <td
-              {{ with .start_time }}
-                >{{ (. | time.AsTime).Format "2 Jan" }}
+              {{ with .name }}
+                >{{.}}
               {{ else }}
                 class="grayed">
               {{ end }}
             </td>
             <td
-              {{ with .name }}
-                >{{.}}
+              {{ with .start_time }}
+                >{{ (. | time.AsTime).Format "2 Jan" }}
               {{ else }}
                 class="grayed">
               {{ end }}

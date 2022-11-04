@@ -1,0 +1,10 @@
+@import 'glitch-video.css';
+
+#video-overlay {
+  position: static;
+  background: radial-gradient(transparent, var(--color-dark-1) 60%);
+}
+
+#space-taker {
+  min-height: calc(100vh - 50px);
+}
