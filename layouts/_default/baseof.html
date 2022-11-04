@@ -5,14 +5,13 @@
     {{- partial "head.html" . -}}
   {{- end -}}
   <title>
-    {{ block "title" . }}
-      {{ if not .IsHome }}
-        {{ with .Title }}
-          {{ . | title }} | 
-        {{ end }}
-        {{ .Site.Title }}
-      {{ end }}
-    {{ end }}
+    {{- block "title" . }}
+      {{- if not .IsHome }}
+        {{- with .Title }}
+          {{- . | title }} | {{ end -}}
+      {{ end -}}
+      {{ .Site.Title -}}
+    {{ end -}}
   </title>
   {{ block "stylesheets" . }}
     {{ partial "css.html" . }}
