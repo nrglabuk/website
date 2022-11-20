@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language }}">
 <head>
-  {{- block "head" . -}}
+  {{ block "head" . }}
     {{- partial "head.html" . -}}
-  {{- end -}}
+  {{ end -}}
   <title>
     {{- block "title" . }}
       {{- if not .IsHome }}
@@ -13,28 +13,29 @@
       {{ .Site.Title -}}
     {{ end -}}
   </title>
-  {{ block "stylesheets" . }}
+  {{ template "_internal/google_analytics.html" . }}
+  {{- block "stylesheets" . }}
     {{ partial "css.html" . }}
   {{ end }}  
-  {{ block "scripts" . }}
-  {{ partial "js.html" . }}
-  {{ end }}
+  {{- block "scripts" . }}
+    {{ partial "js.html" . }}
+  {{ end -}}
 </head>
 <body>
   <header>
-    {{- block "header" . -}}
+    {{ block "header" . }}
       {{- partial "header.html" . -}}
-    {{- end -}}
+    {{ end -}}
   </header>
   <main aria-role="main">
-    {{- block "main" . -}}
-      {{- .Content -}}
-    {{- end -}}
+    {{- block "main" . }}
+      {{- .Content }}
+    {{ end -}}
   </main>
   <footer>
-    {{ block "footer" . -}}
+    {{ block "footer" . }}
       {{- partial "footer.html" . -}}
-    {{- end -}}
+    {{ end -}}
   </footer>
 </body>
 </html>

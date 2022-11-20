@@ -1,6 +1,7 @@
 baseURL: https://nrglab.uk
 disableKinds: ["RSS", "taxonomy", "term"]
 enableRobotsTXT: true
+googleAnalytics: G-5PP14E889Z
 languageCode: en-gb
 publishDir: dist
 staticDir: public
